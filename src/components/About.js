@@ -1,15 +1,12 @@
 import React from "react";
-import Links from "./Links";
 
-function About({ bio, links }) {
+function NavBar() {
+  const links = ["home", "about", "projects"];
   return (
-    <div id="about">
-      <h2>About Me</h2>
-      {bio && bio.length > 1 ? <p>{bio}</p> : null}
-      <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      <Links github={links.github} linkedin={links.linkedin} />
-    </div>
+  <nav>{/* display an <a> tag for each link here */}
+  {links.map((link)=> <a key={link} href={`#${link}`}>{link}</a>)}
+  </nav>
   );
 }
 
-export default About;
+export default NavBar;
